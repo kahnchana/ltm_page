@@ -1,148 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LangToMo — Vision-Language-Action Framework</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>IVRA</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    :root {
-      --primary-color: #2c3e50;
-      --accent-color: #18bc9c;
-      --text-color: #333;
-      --bg-light: #f9f9f9;
-      --max-width: 800px;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Inter', sans-serif;
-      color: var(--text-color);
-      background: var(--bg-light);
-      line-height: 1.6;
-    }
-    header {
-      background: var(--primary-color);
-      color: white;
-      text-align: center;
-      padding: 4rem 1rem;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      font-size: 1.125rem;
-    }
-    nav {
-      margin-top: 1.5rem;
-    }
-    nav ul {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f4f9;
+      color: #333;
+      min-height: 100vh;
       display: flex;
-      justify-content: center;
-      list-style: none;
+      flex-direction: column;
+    }
+
+    .video-grid {
+      width: 100%;
+      max-width: 98%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
       gap: 1rem;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      padding: 0.5rem 1rem;
-      transition: background 0.3s;
-    }
-    nav a:hover {
-      background: rgba(255,255,255,0.1);
-      border-radius: 4px;
-    }
-    main {
-      max-width: var(--max-width);
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    section {
-      margin-bottom: 3rem;
-    }
-    section h2 {
-      font-size: 1.75rem;
-      color: var(--primary-color);
-      margin-bottom: 1rem;
-      position: relative;
-      padding-bottom: 0.5rem;
-    }
-    section h2::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 50px;
-      height: 3px;
-      background: var(--accent-color);
-    }
-    ul, ol {
-      margin-left: 1.5rem;
-      margin-top: 0.5rem;
-    }
-    pre {
-      background: #efefef;
       padding: 1rem;
-      overflow-x: auto;
-      border-radius: 4px;
     }
-    code {
-      font-family: 'Courier New', monospace;
+
+    .video-grid video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
-    footer {
+
+    .video-caption {
       text-align: center;
-      padding: 2rem 1rem;
-      background: #fff;
-      border-top: 1px solid #e0e0e0;
+      margin-top: 1rem;
+      color: #666;
+      font-size: 0.9rem;
     }
-    footer a { color: var(--primary-color); text-decoration: none; }
-    @media (max-width: 600px) {
-      header h1 { font-size: 2rem; }
-      header p { font-size: 1rem; }
+
+    .content-section {
+      padding-top: 2rem;
+    }
+
+    .container {
+      text-align: center;
+      padding: 2rem 3rem;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      color: #4A90E2;
+    }
+
+    p {
+      font-size: 1.25rem;
+      color: #666;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>LangToMo</h1>
-    <p>A hierarchical vision–language–action framework for robot control.</p>
-    <!-- <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#media">Visualization</a></li>
-      </ul>
-    </nav> -->
-  </header>
+  <div class="video-grid" id="videoHeader">
+      <video src="videos/vid01.webm" autoplay loop muted></video>
+      <video src="videos/vid02.webm" autoplay loop muted></video>
+      <video src="videos/vid03.webm" autoplay loop muted></video>
+      <video src="videos/vid04.webm" autoplay loop muted></video>
+      <video src="videos/vid10.webm" autoplay loop muted></video>
+      <video src="videos/vid09.webm" autoplay loop muted></video>
+      <video src="videos/vid07.webm" autoplay loop muted></video>
+      <video src="videos/vid08.webm" autoplay loop muted></video>
+      <video src="videos/vid06.webm" autoplay loop muted></video>
+  </div>
+  <div class="video-caption">
+    <p>NOTE: Above videos are run at 3x speed for visualization purposes.</p>
+  </div>
 
-  <main>
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        LangToMo combines a diffusion-based motion generator (System 2) with
-        an action mapping module (System 1).  It learns to produce interpretable
-        optical-flow representations from language instructions, then translates
-        those flows into real robot actions.
-      </p>
-    </section>
-
-    <section id="features">
-      <h2>Features</h2>
-      <ul>
-        <li>Optical flow as a universal motion representation</li>
-        <li>Text‑conditioned diffusion model for motion generation</li>
-        <li>Learned &amp; hand‑crafted mappings to robot actions</li>
-        <li>Zero‑shot and low‑supervision capabilities</li>
-      </ul>
-    </section>
-
-    <section id="media">
-      <h2>Visualization</h2>
-	  <!-- Videos or GIFs will go here -->
-	  <p> Robot Vis TBA </p>
-    </section>
-
+  <div class="content-section">
+    <div class="container">
+      <h1>LangToMo</h1>
+      <p>A hierarchical vision–language–action framework for robot control.</p>
+    </div>
+  </div>
 </body>
 </html>
