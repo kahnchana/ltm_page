@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <title>IVRA</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="favicon.png" sizes="32x32">
   <style>
     body {
       margin: 0;
@@ -52,7 +53,7 @@
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       width: 100%;
-      max-width: 1200px;
+      max-width: 95%;
       margin: 0 auto;
     }
 
@@ -70,18 +71,18 @@
 </head>
 <body>
   <div class="video-grid" id="videoHeader">
-      <video src="videos/vid01.webm" autoplay loop muted></video>
-      <video src="videos/vid02.webm" autoplay loop muted></video>
-      <video src="videos/vid03.webm" autoplay loop muted></video>
-      <video src="videos/vid04.webm" autoplay loop muted></video>
-      <video src="videos/vid10.webm" autoplay loop muted></video>
-      <video src="videos/vid09.webm" autoplay loop muted></video>
-      <video src="videos/vid07.webm" autoplay loop muted></video>
-      <video src="videos/vid08.webm" autoplay loop muted></video>
-      <video src="videos/vid06.webm" autoplay loop muted></video>
+      <video src="media/rw_videos/vid01.webm" autoplay loop muted></video>
+      <video src="media/rw_videos/vid02.webm" autoplay loop muted></video>
+      <video src="media/rw_videos/vid03.webm" autoplay loop muted></video>
+      <video src="media/rw_videos/vid04.webm" autoplay loop muted></video>
+      <video src="media/rw_videos/vid10.webm" autoplay loop muted></video>
+      <video src="media/rw_videos/vid09.webm" autoplay loop muted></video>
+      <video src="media/rw_videos/vid07.webm" autoplay loop muted></video>
+      <video src="media/rw_videos/vid08.webm" autoplay loop muted></video>
+      <video src="media/rw_videos/vid06.webm" autoplay loop muted></video>
   </div>
   <div class="video-caption">
-    <p>NOTE: Above videos are run at 3x speed for visualization purposes.</p>
+    <p>NOTE: Above videos from our <strong>real world environment</strong> are run at 3x speed for visualization purposes.</p>
   </div>
 
   <div class="content-section">
@@ -90,5 +91,56 @@
       <p>A hierarchical vision–language–action framework for robot control.</p>
     </div>
   </div>
+
+  <style>
+    .video-grid-small {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 10px;
+      padding: 10px;
+    }
+    .video-grid-small video {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+  <div style="margin: 10px 40px;">
+    <h2>Meta-World Simulated Environment</h2>
+  </div>
+  <div class="video-grid-small" id="videoHeader">
+    <video src="media/mw_synth/door/vid_6.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/door/vid_7.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/door/vid_8.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/door/vid_9.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/door/vid_1.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/door/vid_2.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/door/vid_3.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/door/vid_4.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/door/vid_5.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/faucet/vid_1.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/faucet/vid_2.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/faucet/vid_3.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/faucet/vid_4.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/faucet/vid_5.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/bt1/vid_1.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/bt1/vid_2.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/bt1/vid_3.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/bt1/vid_4.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/bt1/vid_5.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/bt1/vid_6.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/bt1/vid_7.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/bt1/vid_8.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/bt1/vid_9.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/bt2/vid_1.webm" autoplay loop muted></video>    
+    <video src="media/mw_synth/bt2/vid_2.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/bt2/vid_3.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/bt2/vid_4.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/bt2/vid_5.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/bt2/vid_6.webm" autoplay loop muted></video>
+    <video src="media/mw_synth/bt2/vid_7.webm" autoplay loop muted></video>
+  </div>
+<div class="video-caption">
+  <p>NOTE: Above videos from the Meta-World simulated environment are run at 3x speed for visualization purposes.</p>
+</div>
 </body>
 </html>
